@@ -11,7 +11,7 @@ resource "aws_vpc" "main" {
 resource "aws_subnet" "main" {
   vpc_id            = aws_vpc.main.id
   cidr_block        = var.subnet_cidr
-  availability_zone = "us-west-1b"
+  availability_zone = "us-east-2b"
   tags = {
     Name = "subnet"
   }
@@ -102,7 +102,7 @@ variable "subnet_cidr" {
 
 # Creating EC2 instance
 resource "aws_instance" "wordpress_instance" {
-  ami                         = "ami-04639e6db24d3600d"
+  ami                         = "ami-0edf386e462400a51"
   instance_type               = "t2.micro"
   count                       = 1
   key_name                    = "project"
